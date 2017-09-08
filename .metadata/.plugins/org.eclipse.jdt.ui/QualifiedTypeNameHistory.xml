@@ -1,2 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.google.gwt.user.client.ui.FormPanel"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
+<fullyQualifiedTypeName name="javax.servlet.ServletException"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="com.google.gwt.user.client.ui.FormPanel.SubmitEvent"/>
+<fullyQualifiedTypeName name="com.google.gwt.user.client.ui.FormPanel.SubmitCompleteEvent"/>
+<fullyQualifiedTypeName name="com.google.gwt.json.client.JSONParser"/>
+<fullyQualifiedTypeName name="com.google.gwt.json.client.JSONObject"/>
+<fullyQualifiedTypeName name="org.eclipse.jetty.server.Response"/>
+<fullyQualifiedTypeName name="com.google.gwt.json.client.JSONString"/>
+<fullyQualifiedTypeName name="com.google.gwt.user.client.ui.VerticalPanel"/>
+<fullyQualifiedTypeName name="com.google.gwt.user.client.ui.FileUpload"/>
+<fullyQualifiedTypeName name="com.google.gwt.user.client.ui.Button"/>
+<fullyQualifiedTypeName name="com.google.gwt.event.dom.client.ClickHandler"/>
+<fullyQualifiedTypeName name="com.google.gwt.event.dom.client.ClickEvent"/>
+<fullyQualifiedTypeName name="com.google.gwt.user.client.ui.RootPanel"/>
+<fullyQualifiedTypeName name="com.google.gwt.user.client.Window"/>
+</qualifiedTypeNameHistroy>
