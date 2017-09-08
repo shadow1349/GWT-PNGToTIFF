@@ -1,0 +1,14 @@
+package com.sredmond.client;
+
+import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.user.client.ui.VerticalPanel;
+
+
+public class Application implements EntryPoint {
+
+	private final String allowedext = ".png";
+	public void onModuleLoad() {
+		VerticalPanel vp = new VerticalPanel();
+		
+	}
+}
