@@ -1,0 +1,35 @@
+package com.sredmond.client;
+
+import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.FileUpload;
+import com.google.gwt.user.client.ui.FormPanel;
+import com.google.gwt.user.client.ui.RootPanel;
+
+
+public class Application implements EntryPoint {
+
+	public void onModuleLoad() {
+		FormPanel fp = new FormPanel();
+		fp.setEncoding(FormPanel.ENCODING_MULTIPART);
+		fp.setAction(GWT.getModuleBaseURL() + "upload");
+		fp.setMethod(FormPanel.METHOD_POST);
+		
+
+		
+		final FileUpload fileUpload = new FileUpload();
+		fileUpload.setName("uploader");
+		Button upload = new Button("Upload");
+		
+		
+		
+
+		
+		fp.add(fileUpload);
+		fp.add(upload);
+		RootPanel.get().add(fp);
+
+
+	}
+}

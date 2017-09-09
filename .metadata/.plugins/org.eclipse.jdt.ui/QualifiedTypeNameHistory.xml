@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.google.gwt.user.client.ui.FormPanel"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
 <fullyQualifiedTypeName name="javax.servlet.ServletException"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="com.google.gwt.user.client.ui.FormPanel.SubmitEvent"/>
-<fullyQualifiedTypeName name="com.google.gwt.user.client.ui.FormPanel.SubmitCompleteEvent"/>
 <fullyQualifiedTypeName name="com.google.gwt.json.client.JSONParser"/>
 <fullyQualifiedTypeName name="com.google.gwt.json.client.JSONObject"/>
 <fullyQualifiedTypeName name="org.eclipse.jetty.server.Response"/>
 <fullyQualifiedTypeName name="com.google.gwt.json.client.JSONString"/>
-<fullyQualifiedTypeName name="com.google.gwt.user.client.ui.VerticalPanel"/>
 <fullyQualifiedTypeName name="com.google.gwt.user.client.ui.FileUpload"/>
 <fullyQualifiedTypeName name="com.google.gwt.user.client.ui.Button"/>
+<fullyQualifiedTypeName name="com.google.gwt.user.client.ui.RootPanel"/>
+<fullyQualifiedTypeName name="com.google.gwt.user.client.ui.FormPanel"/>
+<fullyQualifiedTypeName name="com.google.gwt.core.client.GWT"/>
+<fullyQualifiedTypeName name="com.google.gwt.http.client.RequestBuilder.Method"/>
 <fullyQualifiedTypeName name="com.google.gwt.event.dom.client.ClickHandler"/>
 <fullyQualifiedTypeName name="com.google.gwt.event.dom.client.ClickEvent"/>
-<fullyQualifiedTypeName name="com.google.gwt.user.client.ui.RootPanel"/>
 <fullyQualifiedTypeName name="com.google.gwt.user.client.Window"/>
+<fullyQualifiedTypeName name="com.google.gwt.user.client.ui.FormPanel.SubmitCompleteEvent"/>
+<fullyQualifiedTypeName name="com.google.gwt.user.client.ui.VerticalPanel"/>
+<fullyQualifiedTypeName name="com.google.gwt.user.client.ui.HTMLPanel"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="com.ibm.icu.text.MessagePattern.Part"/>
+<fullyQualifiedTypeName name="java.nio.file.Paths"/>
+<fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
+<fullyQualifiedTypeName name="javax.imageio.ImageIO"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="java.io.BufferedOutputStream"/>
+<fullyQualifiedTypeName name="java.io.BufferedInputStream"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="javax.imageio.stream.ImageInputStream"/>
+<fullyQualifiedTypeName name="java.io.OutputStream"/>
+<fullyQualifiedTypeName name="javax.imageio.stream.ImageOutputStream"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 3 elements from project &apos;Application&apos;&#x0D;&#x0A;- Original project: &apos;Application&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     com.sredmond.client.GreetingService.java&#x0D;&#x0A;     com.sredmond.client.GreetingServiceAsync.java&#x0D;&#x0A;     com.sredmond.server.GreetingServiceImpl.java" description="Delete elements" element1="/src&lt;com.sredmond.client{GreetingServiceAsync.java" element2="/src&lt;com.sredmond.client{GreetingService.java" element3="/src&lt;com.sredmond.server{GreetingServiceImpl.java" elements="3" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1504967357168" subPackages="false" version="1.0"/>
+</session>
