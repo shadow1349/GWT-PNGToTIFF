@@ -1,0 +1,82 @@
+package com.sredmond.client;
+
+import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.FileUpload;
+import com.google.gwt.user.client.ui.FormPanel;
+import com.google.gwt.user.client.ui.FormPanel.SubmitCompleteEvent;
+import com.google.gwt.user.client.ui.HTMLPanel;
+import com.google.gwt.user.client.ui.RootPanel;
+
+
+public class Application implements EntryPoint {
+	private final String allowedext = ".png";
+	public void onModuleLoad() {
+		final HTMLPanel hp = new HTMLPanel("<div></div>");
+		//Create the Form Panel
+		final FormPanel fp = new FormPanel();
+		fp.getElement().addClassName("text-center");
+		//Set the encoding on the form panel
+		fp.setEncoding(FormPanel.ENCODING_MULTIPART);
+		//Set the action to the servlet that I created to handle the file
+		fp.setAction(GWT.getModuleBaseURL() + "upload");
+		//make sure that we are doing a POST rather than GET
+		fp.setMethod(FormPanel.METHOD_POST);
+		
+
+		//Create new FileUpload
+		final FileUpload fileUpload = new FileUpload();
+		//Set the name
+		fileUpload.setName("uploader");
+		
+
+		//Create a submit button for the Form
+		hp.add(new Button("Submit", new ClickHandler() {
+			public void onClick(ClickEvent e) {
+				//Check to make sure we can only take a PNG
+				String file = fileUpload.getFilename();
+				if(file.length() != 0) {
+					String fileExtention = file.substring(file.length() - allowedext.length(), file.length());
+					if(!fileExtention.equals(allowedext)) {
+						Window.alert("Only PNGs are allowed");
+					}
+					else {
+						fp.submit();
+						Window.alert("File uploaded successfully");
+					}
+				}
+				else {
+					Window.alert("Please choose a file");
+				}
+			}
+		}));
+		
+		fp.addSubmitCompleteHandler(new FormPanel.SubmitCompleteHandler() {
+            public void onSubmitComplete(SubmitCompleteEvent event) {
+                //Show download once the submitevent has been completed
+                final FormPanel fpanel = new FormPanel();
+        		fpanel.setEncoding(FormPanel.ENCODING_MULTIPART);
+        		//Set the action to the servlet that I created to handle the file
+        		fpanel.setAction("test.tif");
+        		//make sure that we are doing a POST rather than GET
+        		fpanel.setMethod(FormPanel.METHOD_POST);
+        		fpanel.add(new Button("Download", new ClickHandler() {
+        			public void onClick(ClickEvent e) {
+        				fpanel.submit();
+        			}
+        		}));
+            }
+        });
+
+		//Add the file upload to the form panel
+		hp.add(fileUpload);
+		fp.add(hp);
+		RootPanel.get().add(fp);
+
+	}
+}
+

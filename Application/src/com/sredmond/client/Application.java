@@ -16,7 +16,7 @@ import com.google.gwt.user.client.ui.RootPanel;
 public class Application implements EntryPoint {
 	private final String allowedext = ".png";
 	public void onModuleLoad() {
-		final HTMLPanel hp = new HTMLPanel("<div></div>");
+		final HTMLPanel hp = new HTMLPanel("<div class=\"row\"></div>");
 		//Create the Form Panel
 		final FormPanel fp = new FormPanel();
 		fp.getElement().addClassName("text-center");
@@ -57,10 +57,21 @@ public class Application implements EntryPoint {
 		
 		fp.addSubmitCompleteHandler(new FormPanel.SubmitCompleteHandler() {
             public void onSubmitComplete(SubmitCompleteEvent event) {
-                System.out.println(event);
-                System.out.println(event.getResults());
-            	//Window.alert(event.getResults());
-                
+                //Show download once the submitevent has been completed
+            	final HTMLPanel hpanel = new HTMLPanel("<div class=\"row text-center\"></div>");
+                final FormPanel fpanel = new FormPanel();
+        		fpanel.setEncoding(FormPanel.ENCODING_MULTIPART);
+        		//Set the action to the file that was created by the servlet
+        		fpanel.setAction("file.tif");
+        		//make sure that we are doing a GET to return the created image
+        		fpanel.setMethod(FormPanel.METHOD_GET);
+        		fpanel.add(new Button("Download TIF", new ClickHandler() {
+        			public void onClick(ClickEvent e) {
+        				fpanel.submit();
+        			}
+        		}));
+        		hpanel.add(fpanel);
+        		RootPanel.get().add(hpanel);
             }
         });
 
