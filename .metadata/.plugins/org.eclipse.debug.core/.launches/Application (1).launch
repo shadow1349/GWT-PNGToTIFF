@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="com.gwtplugins.gwt.eclipse.core.compiler">
+<booleanAttribute key="com.gwtplugins.gdt.eclipse.suiteWarArgumentProcessor.IS_WAR_FROM_PROJECT_PROPERTIES" value="true"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/Application"/>
 </listAttribute>
@@ -8,7 +9,7 @@
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="com.gwtplugins.gwt.eclipse.core.moduleClasspathProvider"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.google.gwt.dev.Compiler"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="com.sredmond.Application"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-logLevel INFO -war C:\Work\GWT-PNGToTIFF\Application\war com.sredmond.Application"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Application"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value=""/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx1g"/>
 </launchConfiguration>

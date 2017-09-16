@@ -1,0 +1,58 @@
+package com.sredmond.server;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet; 
+import javax.servlet.http.HttpServletRequest; 
+import javax.servlet.http.HttpServletResponse; 
+
+import org.apache.commons.fileupload;
+import org.apache.commons.fileupload.FileItemIterator; 
+import org.apache.commons.fileupload.FileItemStream; 
+import org.apache.commons.fileupload.servlet.ServletFileUpload; 
+
+
+@SuppressWarnings("serial")
+public class FileUploadServlet extends HttpServlet{
+	@SuppressWarnings({ "resource" })
+	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+		ServletFileUpload fu = new ServletFileUpload();
+		
+		try
+		{
+			//Turn posted image into FileItemIterator.
+			FileItemIterator itr = fu.getItemIterator(req);
+			
+			while(itr.hasNext()) {
+				//Turn the uploaded file into an image stream
+				FileItemStream item = itr.next();
+				
+				//Get the InputStream for the posted file
+				InputStream is = new BufferedInputStream(item.openStream());
+				//Create a new file locally
+				File tif = new File("./file.tif");
+				//Create a buffered output stream for the file
+				BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(tif));
+				int data = -1;
+				
+				while((data = is.read()) != -1) {
+					//Write the file to disk
+					/*
+					 * When it is written to the disk the machine will be able to convert the file stream into 
+					 * whatever image format I want because the machine will automatically generate the file based off of an extension.
+					 */
+					out.write(data);
+				}
+			}
+		}
+		catch(Exception e) {
+			throw new RuntimeException(e);
+		}
+
+	}
+}
