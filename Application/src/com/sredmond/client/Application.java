@@ -59,18 +59,34 @@ public class Application implements EntryPoint {
             public void onSubmitComplete(SubmitCompleteEvent event) {
                 //Show download once the submitevent has been completed
             	final HTMLPanel hpanel = new HTMLPanel("<div class=\"row text-center\"></div>");
-                final FormPanel fpanel = new FormPanel();
-        		fpanel.setEncoding(FormPanel.ENCODING_MULTIPART);
+                final FormPanel fpanel1 = new FormPanel();
+        		fpanel1.setEncoding(FormPanel.ENCODING_MULTIPART);
         		//Set the action to the file that was created by the servlet
-        		fpanel.setAction("file.tif");
+        		fpanel1.setAction("file.tif");
         		//make sure that we are doing a GET to return the created image
-        		fpanel.setMethod(FormPanel.METHOD_GET);
-        		fpanel.add(new Button("Download TIF", new ClickHandler() {
+        		fpanel1.setMethod(FormPanel.METHOD_GET);
+        		fpanel1.add(new Button("Download TIF", new ClickHandler() {
         			public void onClick(ClickEvent e) {
-        				fpanel.submit();
+        				fpanel1.submit();
         			}
         		}));
-        		hpanel.add(fpanel);
+        		
+                final FormPanel fpanel2 = new FormPanel();
+        		fpanel2.setEncoding(FormPanel.ENCODING_MULTIPART);
+        		//Set the action to the file that was created by the servlet
+        		fpanel2.setAction("file.dcm");
+        		//make sure that we are doing a GET to return the created image
+        		fpanel2.setMethod(FormPanel.METHOD_GET);
+        		fpanel2.add(new Button("Download DICOM", new ClickHandler() {
+        			public void onClick(ClickEvent e) {
+        				fpanel2.submit();
+        			}
+        		}));
+        		
+        		
+        		
+        		hpanel.add(fpanel1);
+        		hpanel.add(fpanel2);
         		RootPanel.get().add(hpanel);
             }
         });

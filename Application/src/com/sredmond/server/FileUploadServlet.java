@@ -6,20 +6,18 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Iterator;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet; 
 import javax.servlet.http.HttpServletRequest; 
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileItemFactory;
 import org.apache.commons.fileupload.FileItemIterator; 
 import org.apache.commons.fileupload.FileItemStream;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload; 
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
+import com.pixelmed.dicom.DicomOutputStream; 
 
 
 @SuppressWarnings("serial")
@@ -47,6 +45,7 @@ public class FileUploadServlet extends HttpServlet{
 				File tif = new File(absolutepath + "/" + "file.tif");
 				//Create a buffered output stream for the file
 				BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(tif));
+				DicomOutputStream out2 = new DicomOutputStream(new BufferedOutputStream(new FileOutputStream(new File(absolutepath + "/" + "file.dcm"))), "", "");
 				int data = -1;
 				
 				while((data = is.read()) != -1) {
@@ -56,6 +55,8 @@ public class FileUploadServlet extends HttpServlet{
 					 * whatever image format I want because the machine will automatically generate the file based off of an extension.
 					 */
 					out.write(data);
+					//Use the DicomOutputStream to write the DCM file
+					out2.write(data);
 				}
 			}
 		}
